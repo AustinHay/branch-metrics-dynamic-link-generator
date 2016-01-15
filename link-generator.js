@@ -105,8 +105,8 @@ function createDynamicLink() {
 		androidDeeplinkPath = window.document.getElementById('androidDeeplinkPath').value;
 
 		// Timeouts
-		iosRedirectTimeout = window.document.getElementById('ios_redirect_timeout').value;
-		androidRedirectTimeout = window.document.getElementById('android_redirect_timeout').value;
+		iosRedirectTimeout = window.document.getElementById('iosRedirectTimeout').value;
+		androidRedirectTimeout = window.document.getElementById('androidRedirectTimeout').value;
 
 		// Open Graph
 		ogTitle = window.document.getElementById('ogTitle').value;
@@ -134,7 +134,8 @@ function createDynamicLink() {
 
     	// Url Redirects
    		if (iosUrl.length > 0) {
-    		branchReservedData['$ios_url']=iosUrl;}
+    		branchReservedData['$ios_url']=iosUrl;
+    	}
     	 if (androidUrl.length > 0) {
     		branchReservedData['$android_url']=androidUrl;}
 		if (desktopUrl.length > 0) {
@@ -219,7 +220,7 @@ function createDynamicLink() {
 		window.document.getElementById('decodedData').value = decodedData;
 
 		// Form new link with data added in.
-		link = link + '&' + 3'data=' + base64data + '==';
+		link = link + '&' + 'data=' + base64data + '==';
 	}
 
 	// Final Link Creation
