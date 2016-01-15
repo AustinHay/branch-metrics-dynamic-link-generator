@@ -133,57 +133,57 @@ function createDynamicLink() {
     		branchReservedData['$deskto_url']=desktopUrl;
 		}
 
-	// 	if (windowsUrl.length > 0) {
-	// 		'$windows_url'= windowsUrl;
-	// 	}
+		if (windowsUrl.length > 0) {
+			branchReservedData['$windows_url']=windowsUrl;
+		}
 
-	// 	if (blackberryUrl.length > 0) {
-	// 		'$blackberry_url'= blackberryUrl;
-	// 	}
+		if (blackberryUrl.length > 0) {
+			branchReservedData['$blackberry_url']=blackberryUrl;
+		}
 
-	// 	if (fireUrl.length > 0) {
-	// 		'$fire_url'= fireUrl;
-	// 	}
+		if (fireUrl.length > 0) {
+			branchReservedData['$fire_url']=fireUrl;
+		}
 
-	// 	if (fallbackUrl.length > 0) {
-	// 	'$fallback_url'= fallbackUrl;
-	// 	}	
+		if (fallbackUrl.length > 0) {
+			branchReservedData['$fallback_url']=fallbackUrl;
+		}	
 
-	// 	if (afterClickUrl.length > 0) {
-	// 		'$after_click_url'=afterClickUrl;
-	// 	}
+		if (afterClickUrl.length > 0) {
+			branchReservedData['$after_click_url']=afterClickUrl;
+		}
 
-	// 	if (deeplink_path.length > 0) {
-	// 		'$deeplink_path'=deeplink_path;
-	// 	}
+		if (deeplink_path.length > 0) {
+			branchReservedData['$deeplink_path']=deeplink_path;
+		}
 
-	// 	if (ogTitle.length > 0) {
-	// 		'$og-title'=ogTitle;
-	// 	}
+		if (ogTitle.length > 0) {
+			branchReservedData['$og-title']=ogTitle;
+		}
 
-	// 	if (ogDescription.length > 0) {
-	// 		'$og-description'=ogDescription;
-	// 	}
+		if (ogDescription.length > 0) {
+			branchReservedData['$og-description']=ogDescription;
+		}
 
-	// 	if (ogImage.length > 0) {
-	// 		'$og-image'=ogImage;
-	// 	}
+		if (ogImage.length > 0) {
+			branchReservedData['$og-image']=ogImage;
+		}
 
-	// 	if (ogVideo.length > 0) {
-	// 		'$og-video'=ogVideo;
-	// 	}
+		if (ogVideo.length > 0) {
+			branchReservedData['$og-video']=ogVideo;
+		}
 
-	// 	if (ogUrl.length > 0) {
-	// 		'$og-url'=ogUrl;
-	// 	}
+		if (ogUrl.length > 0) {
+			branchReservedData['$og-url']=ogUrl;
+		}
 
-	// 	if (ogType.length > 0) {
-	// 		'$og-type'=ogType;
-	// 	}
+		if (ogType.length > 0) {
+			branchReservedData['$og-type']=ogType;
+		}
 
-	// 	if (ogRedirect.length > 0) {
-	// 		'$og-redirect'=ogRedirect;
-	//     }
+		if (ogRedirect.length > 0) {
+			branchReservedData['$og-redirect']=ogRedirect;
+		}
 
 	// JSON Convertion
 	JSON.stringify(branchReservedData);	
@@ -194,15 +194,14 @@ function createDynamicLink() {
 		var base64data = window.btoa(JSON.stringify(branchReservedData));
 		window.document.getElementById('encodedData').value = base64data;
 
-		// Form new link with data added in.
-		link = link + 'data=' + base64data + '==';
-	}
-		
-	// Base64 Encoded Data Validation
-	var unencodedData = window.atob(base64data);
-	console.log(unencodedData)
+		// Base64 Encoded Data Validation
+		var decodedData = window.atob(base64data);
+		console.log(decodedData)
+		window.document.getElementById('decodedData').value = decodedData;
 
-	window.document.getElementById('unencodedData').value = unencodedData;
+		// Form new link with data added in.
+		link = link + '&' + 'data=' + base64data + '==';
+	}
 
 	// Final Link Creation
 	window.document.getElementById('generatedDyanmicLink').value = link
