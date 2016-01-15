@@ -1,5 +1,5 @@
 
-
+// You can manipulate the following values to test the generator.
 var testValues = {
 	'domain' : 'bnc.lt',
 	'branchKey' : '',
