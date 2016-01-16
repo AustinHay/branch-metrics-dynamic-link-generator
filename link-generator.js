@@ -227,8 +227,3 @@ function createDynamicLink() {
 	window.document.getElementById('generatedDyanmicLink').value = link
 };
 
-// Clipboard Function
-function copyToClipboard(text) {
-	document.getElementById('generatedDyanmicLink').innerHTML
-  	window.prompt("Copy to clipboard: Ctrl+C, Enter", text);
-};
